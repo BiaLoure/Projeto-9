@@ -24,14 +24,14 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/index.html">Locadora</a>
+          <a class="navbar-brand" href="${cp}/index.jsp">Locadora</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="${cp}/formularios/locacoes/listagem.html">Locações</a>
+                  <a class="nav-link" href="${cp}/formularios/locacoes/listagem.jsp">Locações</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="">Midias</a>
@@ -84,7 +84,7 @@
                 <div class="imagem"><img src="images/para-alugar.png" alt=""></div>
                 <h2>Locações (implementar)</h2>
                 <p></p>
-                <a href="${cp}/formularios/locacoes/listagem.html">Listar</a>
+                <a href="${cp}/formularios/locacoes/listagem.jsp">Listar</a>
               </div>
             </div>
             <div class="col-sm-4">
