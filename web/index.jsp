@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Locadora</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="${cp}/css/style-index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -20,76 +20,6 @@
   <body>
     
 
-<<<<<<< Updated upstream
-    <!--  inicio navbar -->
-=======
-    <h1>Sistema para Locação de Mídias</h1>
-    
-    <p>
-      <a href="${cp}/formularios/locacoes/listagem.jsp" class="alerta">
-        Locações (Implementar)
-      </a>
-    </p>
-    
-    <hr/>
-    
-    <p>
-      <a href="${cp}/formularios/midias/listagem.jsp" class="alerta">
-        Mídias (Implementar)
-      </a>
-    </p>
-    <p>
-      <a href="${cp}/formularios/exemplares/listagem.jsp" class="alerta">
-        Exemplares (Implementar)
-      </a>
-    </p>
-    
-    <hr/>
-    
-    <p>
-      <a href="${cp}/formularios/ator/listagem.jsp" >
-        Ator 
-      </a>
-    </p>
-    <p>
-      <a href="${cp}/formularios/tipos/listagem.jsp">
-        Tipos
-      </a>
-    </p>
-    <p>
-      <a href="${cp}/formularios/generos/listagem.jsp">
-        Gêneros
-      </a>
-    </p>
-    <p>
-      <a href="${cp}/formularios/classificacoesEtarias/listagem.jsp">
-        Classificações Etárias
-      </a>
-    </p>
-    <p>
-      <a href="${cp}/formularios/classificacoesInternas/listagem.jsp">
-        Classificações Internas
-      </a>
-    </p>
-    
-    <hr/>
-    
-    <p>
-      <a href="${cp}/formularios/clientes/listagem.jsp">
-        Clientes
-      </a>
-    </p>
-    <p>
-      <a href="${cp}/formularios/cidades/listagem.jsp">
-        Cidades
-      </a>
-    </p>
-    <p>
-      <a href="${cp}/formularios/estados/listagem.jsp">
-        Estados
-      </a>
-    </p>
->>>>>>> Stashed changes
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
