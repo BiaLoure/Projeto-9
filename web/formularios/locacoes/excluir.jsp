@@ -79,26 +79,56 @@
 
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
-                <form method="post" action="${cp}/processaGenero" class="mb-4">
-                    
+                <form method="post" action="${cp}/processaLocacao" class="mb-4">
                     
                     <input name="acao" type="hidden" value="excluir"/>
-                    <input name="id" type="hidden" value="${requestScope.genero.id}"/>
-                    
-                    <input type="hidden" name="acao" value="inserir"/>
+                    <input type="hidden" name="idLocacao" value="${requestScope.locacao.idLocacao}"/>
 
                     
                     <div class="form-group">
-                        <label for="descricao">Descricacao</label>
-                        <input type="text" class="form-control" name="descricao" placeholder="Digite a descricao" value="${requestScope.genero.descricao}" required disabled>
+                        <label for="descricao">Data Inicio: </label>
+                        <input type="text" class="form-control" name="dataInicio" placeholder="Digite a data de inicio" readonly value="${requestScope.locacao.dataInicio}">
                     </div>
-
-                   
+                    
+                    <div class="form-group">
+                        <label for="descricao">Data Fim: </label>
+                        <input type="date" class="form-control" name="dataFim" placeholder="Digite a data do fim" readonly value="${requestScope.locacao.dataFim}">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="descricao">Cancelada: </label>
+                        
+                        <select class="form-select" aria-label="Default select example" name="cancelada" readonly value="${requestScope.locacao.cancelada}">
+                            <option selected value="false">Não</option>
+                            <option value="true">Sim</option>
+                        </select>
+                        
+                    </div>
+                    
+                    <jsp:useBean
+                        id="clienteServicos"
+                        scope="page"
+                        class="locacaomidias.servicos.ClienteServices"
+                    />
+                    
+                    <div class="form-group">
+                        <label for="descricao">Cliente</label>
+                        
+                        <select class="form-select" aria-label="Default select example" name="clienteSelecionado" readonly>
+                            <option value="${requestScope.locacao.cliente.id}"> ${requestScope.locacao.cliente.nome} ${requestScope.locacao.cliente.sobrenome}</option>
+                            
+                            <c:forEach items="${clienteServicos.todos}" var="cliente" >
+                                <option value="${cliente.id}">${cliente.nome} ${cliente.sobrenome}</option>
+                            </c:forEach>
+                                
+                          </select>
+                    </div>
+                    
 
                     
                     <div class="d-flex justify-content-between">
-                        <a href="${cp}/formularios/locacoes/listagem.jsp" class="btn btn-secondary">Voltar</a>
-                        <button type="submit" class="btn btn-primary" value="excluir">Excluir</button>
+                        <a href="${cp}/formularios/locacoes/listagem.jsp" class="btn btn-secondary mt-4">Voltar</a>
+                        <button type="submit" class="btn btn-primary mt-4">Excluir</button>
                     </div>
                 </form>
             </div>

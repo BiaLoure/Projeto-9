@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="prefixo" value="processaLocacao?acao=preparar"/>
 <c:set var="cp" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,27 +87,42 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Descricao</th>
+                                <th>Data Inicio</th>
+                                <th>Data Fim</th>
+                                <th>Cancelada</th>
+                                <th>Cliente</th>
                                 <th>Alterar</th>
                                 <th>Excluir</th>
                             </tr>
                         </thead>
     
+                        <jsp:useBean
+                            id="locacaoServices"
+                            scope="page"
+                            class="locacaomidias.servicos.LocacaoServices"/>
+                        
                         <tbody>
+                            <c:forEach items="${locacaoServices.todos}" var="locacao" >
                                 <tr>
-                                    <td></td>
-                                    <td></td>
+                                    <td>${locacao.idLocacao}</td>
+                                    <td>${locacao.dataInicio}</td>
+                                    <td>${locacao.dataFim}</td>
+                                    <td>${locacao.cancelada}</td>
+                                    <td>${locacao.cliente.nome} ${locacao.cliente.sobrenome}</td>
                                     <td>
-                                        <a href="${cp}/formularios/locacoes/alterar.jsp">
+                                        <a href="${cp}/${prefixo}Alteracao&id=${locacao.idLocacao}">
                                             <img src="${cp}/images/alterar.png" style="height: 20px; width: 20px">
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="${cp}/formularios/locacoes/excluir.jsp">
+                                        <a href="${cp}/${prefixo}Exclusao&id=${locacao.idLocacao}">
                                             <img src="${cp}/images/excluir.png" style="height: 20px; width: 20px">
                                         </a>
                                     </td>
                                 </tr>
+                            </c:forEach>
+                            
+                                
                         </tbody>
                     </table>
                              

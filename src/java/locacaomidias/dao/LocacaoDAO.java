@@ -51,7 +51,8 @@ public class LocacaoDAO extends DAO<Locacao>{
                 SET
                     data_inicio = ?,
                     data_fim = ?,
-                    cancelada = ?
+                    cancelada = ?,
+                    cliente_id = ?
                 WHERE
                     id = ?
                 """
@@ -60,7 +61,9 @@ public class LocacaoDAO extends DAO<Locacao>{
         statement.setInt(1, obj.getDataInicio());
         statement.setDate(2, obj.getDataFim());
         statement.setBoolean(3, obj.isCancelada());
-        statement.setLong(4, obj.getIdLocacao());
+        
+        statement.setLong(4, obj.getCliente().getId());
+        statement.setLong(5, obj.getIdLocacao());
         
         statement.executeUpdate();
         

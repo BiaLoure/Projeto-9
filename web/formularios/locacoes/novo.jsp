@@ -78,21 +78,57 @@
 
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
-                <form method="post" action="${cp}/processaGenero" class="mb-4">
+                <form method="post" action="${cp}/processaLocacao" class="mb-4">
                     
                     <input type="hidden" name="acao" value="inserir"/>
 
                     
                     <div class="form-group">
-                        <label for="descricao">Descricao</label>
-                        <input type="text" class="form-control" name="descricao" placeholder="Digite a descricao" required>
+                        <label for="descricao">Data Inicio: </label>
+                        <input type="text" class="form-control" name="dataInicio" placeholder="Digite a data de inicio" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="descricao">Data Fim: </label>
+                        <input type="date" class="form-control" name="dataFim" placeholder="Digite a data do fim" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="descricao">Cancelada: </label>
+                        
+                        <select class="form-select" aria-label="Default select example" name="cancelada" required>
+                            <option selected value="false">Não</option>
+                            <option value="true">Sim</option>
+                        </select>
+                        
+                    </div>
+                    
+                    
+                    
+                    <jsp:useBean
+                        id="clienteServicos"
+                        scope="page"
+                        class="locacaomidias.servicos.ClienteServices"
+                    />
+                    
+                    <div class="form-group">
+                        <label for="descricao">Cliente</label>
+                        
+                        <select class="form-select" aria-label="Default select example" name="clienteSelecionado" required>
+                            <option selected>Selecione um cliente: </option>
+                            
+                            <c:forEach items="${clienteServicos.todos}" var="cliente" >
+                                <option value="${cliente.id}">${cliente.nome} ${cliente.sobrenome}</option>
+                            </c:forEach>
+                                
+                          </select>
                     </div>
                     
 
                     
                     <div class="d-flex justify-content-between">
-                        <a href="${cp}/formularios/locacoes/listagem.jsp" class="btn btn-secondary">Voltar</a>
-                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                        <a href="${cp}/formularios/locacoes/listagem.jsp" class="btn btn-secondary mt-4">Voltar</a>
+                        <button type="submit" class="btn btn-primary mt-4">Adicionar</button>
                     </div>
                 </form>
             </div>

@@ -120,7 +120,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="${cp}/${prefixo}Alteracao&id=${cliente.id}">
+                                        <a href="${cp}/${prefixo}Exclusao&id=${cliente.id}">
                                             <img src="${cp}/images/excluir.png" style="height: 20px; width: 20px">
                                         </a>
                                     </td>
