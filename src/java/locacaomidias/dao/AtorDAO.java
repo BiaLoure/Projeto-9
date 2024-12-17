@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package locacaomidias.dao;
 
 import locacaomidias.entidades.Ator;
@@ -10,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import locacaomidias.utils.Utils;
 
 public class AtorDAO extends DAO<Ator> {
     
@@ -30,6 +28,7 @@ public class AtorDAO extends DAO<Ator> {
         stmt.setDate( 3, obj.getDataEstreia() );
 
         stmt.executeUpdate();
+         obj.setId( Utils.getChavePrimariaAposInsercao( stmt, "insert_id" ) );
         stmt.close();
 
     }
@@ -47,7 +46,7 @@ public class AtorDAO extends DAO<Ator> {
         stmt.setString( 1, obj.getNome() );
         stmt.setString( 2, obj.getSobrenome() );
         stmt.setDate( 3, obj.getDataEstreia() );
-        stmt.setInt( 4, obj.getId() );
+        stmt.setLong( 4, obj.getId() );
 
         stmt.executeUpdate();
         stmt.close();
@@ -61,7 +60,7 @@ public class AtorDAO extends DAO<Ator> {
             "WHERE" +
             " id = ?;" );
 
-        stmt.setInt( 1, obj.getId() );
+        stmt.setLong( 1, obj.getId() );
         stmt.executeUpdate();
         stmt.close();
     }
@@ -79,7 +78,7 @@ public class AtorDAO extends DAO<Ator> {
 
         Ator a= new Ator();
 
-        a.setId( rs.getInt( "id" ) );
+        a.setId( rs.getLong( "id" ) );
         a.setNome( rs.getString( "nome" ) );
         a.setSobrenome( rs.getString( "sobrenome" ) );
         a.setDataEstreia( rs.getDate( "data_estreia" ) );
@@ -95,13 +94,14 @@ public class AtorDAO extends DAO<Ator> {
     return lista;
     }
 
-    public Ator obterPorId(int id) throws SQLException {
+    @Override
+    public Ator obterPorId(Long id) throws SQLException {
         Ator ator = null;
 
         PreparedStatement stmt = getConnection().prepareStatement(
             "SELECT * FROM ator " +
             "WHERE id = ?;" );
-        stmt.setInt( 1, id );
+        stmt.setLong( 1, id );
 
         ResultSet rs = stmt.executeQuery();
 
@@ -109,7 +109,7 @@ public class AtorDAO extends DAO<Ator> {
 
             ator = new Ator();
 
-            ator.setId( rs.getInt( "id" ) );
+            ator.setId( rs.getLong( "id" ) );
             ator.setNome( rs.getString( "nome" ) );
             ator.setSobrenome( rs.getString( "sobrenome" ) );
             ator.setDataEstreia( rs.getDate( "data_estreia" ) );
@@ -121,15 +121,4 @@ public class AtorDAO extends DAO<Ator> {
 
         return ator;
     }
-
-    @Override
-    public Ator obterPorId(Long id) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void fecharConexao() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-    
 }

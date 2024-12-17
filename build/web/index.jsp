@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Locadora</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="${cp}/css/style-index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -20,48 +20,47 @@
   <body>
     
 
-    <!--  inicio navbar -->
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/index.html">Locadora</a>
+          <a class="navbar-brand" href="${cp}/index.jsp">Locadora</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="${cp}/formularios/locacoes/listagem.html">Locações</a>
+                  <a class="nav-link" href="${cp}/formularios/locacoes/listagem.jsp">Locações</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="">Midias</a>
+                  <a class="nav-link" href="${cp}/formularios/midias/listagem.jsp">Midias</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Exemplares</a>
+                    <a class="nav-link" href="${cp}/formularios/exemplares/listagem.jsp">Exemplares</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Ator</a>
+                    <a class="nav-link" href="${cp}/formularios/ator/listagem.jsp">Ator</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tipos</a>
+                    <a class="nav-link" href="${cp}/formularios/tipos/listagem.jsp">Tipos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Gêneros</a>
+                    <a class="nav-link" href="${cp}/formularios/generos/listagem.jsp">Gêneros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Classificações Etárias</a>
+                    <a class="nav-link" href="${cp}/formularios/classificacoesEtarias/listagem.jsp">Classificações Etárias</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Classificações Internas</a>
+                    <a class="nav-link" href="${cp}/formularios/classificacoesInternas/listagem.jsp">Classificações Internas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Clientes</a>
+                    <a class="nav-link" href="${cp}/formularios/clientes/listagem.jsp">Clientes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cidades</a>
+                    <a class="nav-link" href="${cp}/formularios/cidades/listagem.jsp">Cidades</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Estados</a>
+                    <a class="nav-link" href="${cp}/formularios/estados/listagem.jsp">Estados</a>
                 </li>
                 
             </ul>
@@ -84,7 +83,7 @@
                 <div class="imagem"><img src="images/para-alugar.png" alt=""></div>
                 <h2>Locações (implementar)</h2>
                 <p></p>
-                <a href="${cp}/formularios/locacoes/listagem.html">Listar</a>
+                <a href="${cp}/formularios/locacoes/listagem.jsp">Listar</a>
               </div>
             </div>
             <div class="col-sm-4">

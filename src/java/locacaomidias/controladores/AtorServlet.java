@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
+
 package locacaomidias.controladores;
 
 import java.io.IOException;
@@ -12,18 +9,17 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import locacaomidias.dao.CidadeDAO;
-import locacaomidias.dao.EstadoDAO;
-import locacaomidias.entidades.Cidade;
-import locacaomidias.entidades.Estado;
+import locacaomidias.dao.AtorDAO;
+import locacaomidias.entidades.Ator;
 import locacaomidias.utils.Utils;
 
 /**
- * Servlet para tratar Cidades.
+ * Servlet para tratar Ator.
  *
  * @author Prof. Dr. David Buzatto
  */
-@WebServlet(name = "AtorServlet", urlPatterns = {"/processaAtor"})
+@WebServlet( name = "AtorServlet", 
+             urlPatterns = { "/processaAtor" } )
 public class AtorServlet extends HttpServlet {
 
     protected void processRequest( 
@@ -33,64 +29,66 @@ public class AtorServlet extends HttpServlet {
         
         String acao = request.getParameter( "acao" );
         RequestDispatcher disp = null;
-
-        try ( CidadeDAO daoCidade = new CidadeDAO();
-              EstadoDAO daoEstado = new EstadoDAO() ){
+        
+        try ( AtorDAO daoAtor = new AtorDAO()) {
 
             if ( acao.equals( "inserir" ) ) {
 
                 String nome = request.getParameter( "nome" );
-                Long idEstado = Utils.getLong( request, "idEstado" );
+                String sobrenome = request.getParameter( "sobrenome" );
+                String data_estreia = request.getParameter( "data_estreia" );
+                
+                Ator a = new Ator();
+                a.setNome( nome );
+                a.setSobrenome( sobrenome );
+                a.setDataEstreia( Utils.getDate( data_estreia) );
+                
 
-                Estado e = daoEstado.obterPorId( idEstado );
-
-                Cidade c = new Cidade();
-                c.setNome( nome );
-                c.setEstado( e );
-
-                Utils.validar( c, "id" );
-                daoCidade.salvar( c );
+                Utils.validar( a, "id" );
+                daoAtor.salvar( a );
                 disp = request.getRequestDispatcher(
-                        "/formularios/cidades/listagem.jsp" );
+                        "/formularios/ator/listagem.jsp" );
 
             } else if ( acao.equals( "alterar" ) ) {
 
                 Long id = Utils.getLong( request, "id" );
                 String nome = request.getParameter( "nome" );
-                Long idEstado = Utils.getLong( request, "idEstado" );
+                String sobrenome = request.getParameter( "sobrenome" );
+                String data_estreia = request.getParameter( "data_estreia" );
+          
 
-                Estado e = daoEstado.obterPorId( idEstado );
+                Ator a = daoAtor.obterPorId( id );
+                a.setNome( nome );
+                a.setSobrenome( sobrenome );
+                a.setDataEstreia( Utils.getDate( data_estreia ) );
+             
 
-                Cidade c = daoCidade.obterPorId( id );
-                c.setNome( nome );
-                c.setEstado( e );
-
-                Utils.validar( c );
-                daoCidade.atualizar( c );
+                Utils.validar( a );
+                daoAtor.atualizar( a );
                 disp = request.getRequestDispatcher(
-                        "/formularios/cidades/listagem.jsp" );
+                        "/formularios/ator/listagem.jsp" );
 
             } else if ( acao.equals( "excluir" ) ) {
 
                 Long id = Utils.getLong( request, "id" );
-                Cidade c = daoCidade.obterPorId( id );
+                Ator a = daoAtor.obterPorId( id );
 
-                daoCidade.excluir( c );
+                daoAtor.excluir( a );
                 disp = request.getRequestDispatcher(
-                        "/formularios/cidades/listagem.jsp" );
+                        "/formularios/ator/listagem.jsp" );
 
             } else {
                 
                 Long id = Utils.getLong( request, "id" );
-                Cidade c = daoCidade.obterPorId( id );
-                request.setAttribute( "cidade", c );
+                Ator a = daoAtor.obterPorId( id );
+                request.setAttribute( "ator", a );
                 
                 if ( acao.equals( "prepararAlteracao" ) ) {
                     disp = request.getRequestDispatcher( 
-                            "/formularios/cidades/alterar.jsp" );
+                            "/formularios/ator/alterar.jsp" );
                 } else if ( acao.equals( "prepararExclusao" ) ) {
                     disp = request.getRequestDispatcher( 
-                            "/formularios/cidades/excluir.jsp" );
+                            "/formularios/ator/excluir.jsp" );
                 }
                 
             }
@@ -123,7 +121,7 @@ public class AtorServlet extends HttpServlet {
 
     @Override
     public String getServletInfo() {
-        return "CidadesServlet";
+        return "AtorServlet";
     }
 
 }

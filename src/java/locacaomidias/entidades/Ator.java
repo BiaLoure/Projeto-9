@@ -1,23 +1,33 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package locacaomidias.entidades;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import java.sql.Date;
 
 public class Ator {
-    private int id;
+    
+    @NotNull
+    private Long id;
+    
+    @NotNull
+    @Size( min = 1, max = 45 )
     private String nome;
+    
+    @NotNull
+    @Size( min = 1, max = 45 )
     private String sobrenome;
-    private Date dataEstreia;
+    
+    @NotNull
+    private Date data_estreia;
+    
     
 
-    public int getId() {
+    public Long getId() {
     return id;
     }
 
-    public void setId( int id ) {
+    public void setId( Long id ) {
     this.id = id;
     }
 
@@ -38,10 +48,10 @@ public class Ator {
     }
 
     public Date getDataEstreia() {
-    return dataEstreia;
+    return data_estreia;
     }
 
-    public void setDataEstreia( Date dataEstreia ) {
-    this.dataEstreia = dataEstreia;
+    public void setDataEstreia( Date data_estreia ) {
+    this.data_estreia = data_estreia;
     }
 }
