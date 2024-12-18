@@ -79,35 +79,59 @@
             
         <div class="row">
             <div class="col-12 text-center mb-4">
-                <h1>Excluir Estado</h1>
+                <h1>Alterar Exemplares</h1>
             </div>
         </div>
 
 
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
-                <form method="post" action="${cp}/processaEstados" class="mb-4">
+                <form method="post" action="${cp}/processaExemplares" class="mb-4">
                     
-                    <input type="hidden" name="acao" value="excluir"/>
-                    <input name="id" type="hidden" value="${requestScope.estado.id}"/>
+                    <input type="hidden" name="acao" value="alterar"/>
+                    <input name="codigoInterno" type="hidden" value="${requestScope.exemplar.codigoInterno}"/>
 
                     
                     <div class="form-group">
-                        <label for="descricao">Nome</label>
-                            <input class="form-control" value="${requestScope.estado.nome}" disabled>
+                            <label for="sigla">Disponivel</label>
+                            <select class="form-select" aria-label="Default select example" name="disponivel" required>
+                            <option selected value="true">Sim</option>
+                            <option value="false">Não</option>
+                            </select>
                     </div>
                     
                     <div class="form-group">
-                        <label for="descricao">Sigla</label>
-                            <input class="form-control" value="${requestScope.estado.sigla}" disabled>
+                        <label for="sigla">Titulo</label>
+                            <jsp:useBean 
+                                id="servicosMidia" 
+                                scope="page" 
+                                class="locacaomidias.servicos.MidiaServices"/>
+
+                            <select name="idMidia" class="form-control" required>
+                             <c:forEach items="${servicosMidia.todos}" var="midia">
+                                <c:choose>
+                                    <c:when test="${requestScope.exemplar.midia.id eq midia.id}">
+                                        <option value="${midia.id}" selected>
+                                          ${midia.titulo}
+                                        </option>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <option value="${midia.id}">
+                                          ${midia.titulo}
+                                        </option>
+                                    </c:otherwise>
+                                </c:choose>
+
+                            </c:forEach>
+                            </select>
                     </div>
                     
                     
 
                     
                     <div class="d-flex justify-content-between mt-5">
-                        <a href="${cp}/formularios/estados/listagem.jsp" class="btn btn-secondary">Voltar</a>
-                        <button type="submit" class="btn btn-primary">Excluir</button>
+                        <a href="${cp}/formularios/exemplares/listagem.jsp" class="btn btn-secondary">Voltar</a>
+                        <button type="submit" class="btn btn-primary">Alterar</button>
                     </div>
                 </form>
             </div>

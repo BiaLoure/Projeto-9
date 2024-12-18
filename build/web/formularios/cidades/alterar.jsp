@@ -109,7 +109,7 @@
                             class="locacaomidias.servicos.EstadoServices"/>               
                     
                     <div class="form-group">
-                        <label for="sigla">Sigla</label>
+                        <label for="sigla">Estado</label>
                         <select name="idEstado" class="form-control" required>
                                 <c:forEach items="${servicos.todos}" var="estado">
                                   <c:choose>

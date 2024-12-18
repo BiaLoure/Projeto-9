@@ -1,61 +1,123 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="cp" value="${pageContext.request.contextPath}"/>
-
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Excluir Ator</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="${cp}/css/estilos.css"/>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="${cp}/css/style-forms.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    
+    <style>
+        
+        .form-group{
+            margin-top: 10px
+        }
+    </style>
+    
+</head>
+<body>
 
-    </head>
-    <body>
-        <div class="navbar-listagem">
-            <div class="navbar">
-                <img src="${cp}/css/imagens/Logo.svg" alt="logo" class="logo" >
-                <h1 class="home" href="${cp}/index.jsp">Cineloc</h1>
-                <div class="links">
-                    <a href="${cp}/index.jsp">Início</a>
-                    <a href="${cp}/formularios/DVD/listagem.jsp">Nossos Filmes</a>
-                    <a href="${cp}/formularios/ator/listagem.jsp">Atores</a>
-                    <a href="${cp}/formularios/genero/listagem.jsp">Gêneros</a>
-                    <a href="${cp}/formularios/classificacao/listagem.jsp">Classificação Etária</a>
-                </div>
+    <!--  inicio navbar -->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="${cp}/index.jsp">Locadora</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="${cp}/formularios/locacoes/listagem.jsp">Locações</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="${cp}/formularios/midias/listagem.jsp">Midias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${cp}/formularios/exemplares/listagem.jsp">Exemplares</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${cp}/formularios/ator/listagem.jsp">Ator</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${cp}/formularios/tipos/listagem.jsp">Tipos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${cp}/formularios/generos/listagem.jsp">Gêneros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${cp}/formularios/classificacoesEtarias/listagem.jsp">Classificações Etárias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${cp}/formularios/classificacoesInternas/listagem.jsp">Classificações Internas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${cp}/formularios/clientes/listagem.jsp">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${cp}/formularios/cidades/listagem.jsp">Cidades</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${cp}/formularios/estados/listagem.jsp">Estados</a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      
+    <!--  fim navbar -->
+
+     <!-- Formulario-->
+     <div class="container border my-4 shadow p-4 bg-light">
+
+            
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <h1>Excluir Ator</h1>
             </div>
         </div>
-        <h2>Excluir Ator</h2>
-                
-        <form method="post" action="${cp}/processaAtor">
-            <input name="acao" type="hidden" value="excluir"/>
-            <input name="id" type="hidden" value="${requestScope.ator.id}"/>
 
-            <table>
-                <tr>
-                    <td class="alinharDireita">Nome:</td>
-                    <td>${requestScope.ator.nome}</td>
-                </tr>
-                <tr>
-                    <td class="alinharDireita">Sobrenome:</td>
-                    <td>${requestScope.ator.sobrenome}</td>
-                </tr>
-                <tr>
-                    <td class="alinharDireita">Data de Estreia:</td>
-                    <td>${requestScope.ator.dataEstreia}</td>
-                </tr>
-                <tr>
-                    <td>
-                        <a class="voltar" href="${cp}/formularios/ator/listagem.jsp">Voltar</a>
-                    </td>
-                    <td class="alinharDireita">
-                        <input class="salvar" type="submit" value="Excluir"/>
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </body>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <form method="post" action="${cp}/processaAtor" class="mb-4">
+                    
+                    <input type="hidden" name="acao" value="excluir"/>
+                    <input name="id" type="hidden" value="${requestScope.ator.id}"/>
+
+                    
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                            <input class="form-control" value="${requestScope.ator.nome}" disabled>
+                    </div>
+                    
+                     <div class="form-group">
+                        <label for="sobrenome">Sobrenome</label>
+                            <input class="form-control" value="${requestScope.ator.sobrenome}" disabled>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dataEstreia">Data Estreia</label>
+                            <input class="form-control" value="${requestScope.ator.dataEstreia}" disabled>
+                    </div>
+                    
+                    
+
+                    
+                    <div class="d-flex justify-content-between mt-5">
+                        <a href="${cp}/formularios/ator/listagem.jsp" class="btn btn-secondary">Voltar</a>
+                        <button type="submit" class="btn btn-primary">Excluir</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
 </html>

@@ -79,35 +79,49 @@
             
         <div class="row">
             <div class="col-12 text-center mb-4">
-                <h1>Excluir Estado</h1>
+                <h1>Adicionar Exemplar</h1>
             </div>
         </div>
 
 
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
-                <form method="post" action="${cp}/processaEstados" class="mb-4">
+                <form method="post" action="${cp}/processaExemplares" class="mb-4">
                     
-                    <input type="hidden" name="acao" value="excluir"/>
-                    <input name="id" type="hidden" value="${requestScope.estado.id}"/>
+                    <input type="hidden" name="acao" value="inserir"/>
 
                     
                     <div class="form-group">
-                        <label for="descricao">Nome</label>
-                            <input class="form-control" value="${requestScope.estado.nome}" disabled>
+                        <label for="nome">Titulo</label>
+                            <jsp:useBean 
+                                id="servicosMidia" 
+                                scope="page" 
+                                class="locacaomidias.servicos.MidiaServices"/>
+
+                            <select name="idMidia" class="form-control" required>
+                              <c:forEach items="${servicosMidia.todos}" var="midia">
+                                <option value="${midia.id}">
+                                  ${midia.titulo}
+                                </option>
+                              </c:forEach>
+                            </select>
                     </div>
                     
                     <div class="form-group">
-                        <label for="descricao">Sigla</label>
-                            <input class="form-control" value="${requestScope.estado.sigla}" disabled>
+                        <label for="sigla">Disponivel</label>
+                            <select class="form-select" aria-label="Default select example" name="disponivel" required>
+                            <option selected value="true">Sim</option>
+                            <option value="false">Não</option>
+                            </select>
                     </div>
+                    
                     
                     
 
                     
                     <div class="d-flex justify-content-between mt-5">
-                        <a href="${cp}/formularios/estados/listagem.jsp" class="btn btn-secondary">Voltar</a>
-                        <button type="submit" class="btn btn-primary">Excluir</button>
+                        <a href="${cp}/formularios/exemplares/listagem.jsp" class="btn btn-secondary">Voltar</a>
+                        <button type="submit" class="btn btn-primary">Adicionar</button>
                     </div>
                 </form>
             </div>

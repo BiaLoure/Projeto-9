@@ -79,34 +79,34 @@
             
         <div class="row">
             <div class="col-12 text-center mb-4">
-                <h1>Excluir Estado</h1>
+                <h1>Excluir Exemplar</h1>
             </div>
         </div>
 
 
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
-                <form method="post" action="${cp}/processaEstados" class="mb-4">
+                <form method="post" action="${cp}/processaExemplares" class="mb-4">
                     
                     <input type="hidden" name="acao" value="excluir"/>
-                    <input name="id" type="hidden" value="${requestScope.estado.id}"/>
+                    <input name="codigoInterno" type="hidden" value="${requestScope.exemplar.codigoInterno}"/>
 
                     
                     <div class="form-group">
-                        <label for="descricao">Nome</label>
-                            <input class="form-control" value="${requestScope.estado.nome}" disabled>
+                        <label for="descricao">Disponivel</label>
+                            <input class="form-control" value="${requestScope.exemplar.disponivel ? 'Sim' : 'Não'}" disabled>
                     </div>
                     
                     <div class="form-group">
-                        <label for="descricao">Sigla</label>
-                            <input class="form-control" value="${requestScope.estado.sigla}" disabled>
+                        <label for="descricao">Titulo</label>
+                            <input class="form-control" value="${requestScope.exemplar.midia.titulo}" disabled>
                     </div>
                     
                     
 
                     
                     <div class="d-flex justify-content-between mt-5">
-                        <a href="${cp}/formularios/estados/listagem.jsp" class="btn btn-secondary">Voltar</a>
+                        <a href="${cp}/formularios/exemplares/listagem.jsp" class="btn btn-secondary">Voltar</a>
                         <button type="submit" class="btn btn-primary">Excluir</button>
                     </div>
                 </form>

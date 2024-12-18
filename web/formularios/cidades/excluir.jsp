@@ -93,12 +93,12 @@
 
                     
                     <div class="form-group">
-                        <label for="descricao">Descricao</label>
+                        <label for="descricao">Nome</label>
                             <input class="form-control" value="${requestScope.cidade.nome}" disabled>
                     </div>
                     
                     <div class="form-group">
-                        <label for="descricao">Descricao</label>
+                        <label for="descricao">Estado</label>
                             <input class="form-control" value="${requestScope.cidade.estado.sigla}" disabled>
                     </div>
                     
