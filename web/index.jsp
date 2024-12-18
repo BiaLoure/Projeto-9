@@ -91,7 +91,7 @@
                 <div class="imagem"><img src="images/claquete.png" alt=""></div>
                 <h2>Midias (implementar) </h2>
                 <p></p>
-                <a href="#">Listar</a>
+                <a href="${cp}/formularios/midias/listagem.jsp">Listar</a>
               </div>
             </div>
             <div class="col-sm-4">
@@ -99,7 +99,7 @@
                 <div class="imagem"><img src="images/filme.png" alt=""></div>
                 <h2>Exemplares (implementar) </h2>
                 <p></p>
-                <a href="#">Listar</a>
+                <a href="${cp}/formularios/exemplares/listagem.jsp">Listar</a>
               </div>
             </div>
           </div>
@@ -113,7 +113,7 @@
                 <div class="imagem"><img src="images/ator.png" alt=""></div>
                 <h2>Ator (implementar)</h2>
                 <p></p>
-                <a href="#">Listar</a>
+                <a href="${cp}/formularios/ator/listagem.jsp">Listar</a>
               </div>
             </div>
             <div class="col-sm-4">
@@ -121,7 +121,7 @@
                 <div class="imagem"><img src="images/exame.png" alt=""></div>
                 <h2>Tipos</h2>
                 <p></p>
-                <a href="#">Listar</a>
+                <a href="${cp}/formularios/tipos/listagem.jsp">Listar</a>
               </div>
             </div>
             <div class="col-sm-4">
@@ -129,7 +129,7 @@
                 <div class="imagem"><img src="images/tira-de-filme.png" alt=""></div>
                 <h2>Gêneros</h2>
                 <p></p>
-                <a href="#">Listar</a>
+                <a href="${cp}/formularios/generos/listagem.jsp">Listar</a>
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@
                 <div class="imagem"><img src="images/plus-18-movie.png" alt=""></div>
                 <h2>Classificações Etárias</h2>
                 <p></p>
-                <a href="#">Listar</a>
+                <a href="${cp}/formularios/classificacoesEtarias/listagem.jsp">Listar</a>
               </div>
             </div>
             <div class="col-sm-4">
@@ -152,7 +152,7 @@
                 <div class="imagem"><img src="images/desconto.png" alt=""></div>
                 <h2>Classificações Internas</h2>
                 <p></p>
-                <a href="#">Listar</a>
+                <a href="${cp}/formularios/classificacoesInternas/listagem.jsp">Listar</a>
               </div>
             </div>
             <div class="col-sm-4">
@@ -160,7 +160,7 @@
                 <div class="imagem"><img src="images/cliente.png" alt=""></div>
                 <h2>Clientes</h2>
                 <p></p>
-                <a href="#">Listar</a>
+                <a href="${cp}/formularios/clientes/listagem.jsp">Listar</a>
               </div>
             </div>
           </div>
@@ -173,7 +173,7 @@
                 <div class="imagem"><img src="images/endereco-residencial.png" alt=""></div>
                 <h2>Cidades</h2>
                 <p></p>
-                <a href="#">Listar</a>
+                <a href="${cp}/formularios/cidades/listagem.jsp">Listar</a>
               </div>
             </div>
             <div class="col-sm-4">
@@ -181,7 +181,7 @@
                 <div class="imagem"><img src="images/estados-unidos.png" alt=""></div>
                 <h2>Estados</h2>
                 <p></p>
-                <a href="#">Listar</a>
+                <a href="${cp}/formularios/estados/listagem.jsp">Listar</a>
               </div>
             </div>
             

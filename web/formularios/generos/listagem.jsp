@@ -108,7 +108,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="${cp}/${prefixo}Alteracao&id=${genero.id}">
+                                        <a href="${cp}/${prefixo}Exclusao&id=${genero.id}">
                                             <img src="${cp}/images/excluir.png" style="height: 20px; width: 20px">
                                         </a>
                                     </td>

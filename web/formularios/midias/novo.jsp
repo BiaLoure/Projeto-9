@@ -92,7 +92,7 @@
 
                     
                     <div class="form-group">
-                        <label for="descricao">Titulo</label>
+                        <label for="titulo">Titulo</label>
                             <input name="titulo"
                                    type="text"
                                    class="form-control"
@@ -102,7 +102,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="descricao">Ano Lançamento</label>
+                        <label for="anoLancamento">Ano Lançamento</label>
                             <input name="anoLancamento"
                                    type="text"
                                    class="form-control"
@@ -112,7 +112,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="descricao">Codigo de Barras</label>
+                        <label for="codigoBarras">Codigo de Barras</label>
                             <input name="codigoBarras"
                                    type="text"
                                    class="form-control"                                   
@@ -122,7 +122,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="descricao">Duração</label>
+                        <label for="duracaoEmMinutos">Duração</label>
                             <input name="duracaoEmMinutos"
                                     type="number"
                                     class="form-control"
@@ -133,7 +133,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="descricao">Ator Principal</label>
+                        <label for="idAtorPrincipal">Ator Principal</label>
                         
                         <jsp:useBean 
                             id="servicosAtor" 
@@ -151,7 +151,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="descricao">Ator Secundario</label>
+                        <label for="idAtorCoadjuvante">Ator Secundario</label>
                         
                         <select name="idAtorCoadjuvante" class="form-control" required>
                             <c:forEach items="${servicosAtor.todos}" var="atorCoadjuvante">
@@ -164,7 +164,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="descricao">Genero</label>
+                        <label for="idGenero">Genero</label>
                         
                         <jsp:useBean 
                             id="servicosGenero" 
@@ -182,7 +182,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="descricao">Classificação Etária</label>
+                        <label for="idClassificacaoEtaria">Classificação Etária</label>
                         
                         <jsp:useBean 
                             id="servicosClassificacaoEtaria" 
@@ -201,7 +201,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="descricao">Tipo</label>
+                        <label for="idTipo">Tipo</label>
                         
                         <jsp:useBean 
                             id="servicosTipo" 
@@ -219,7 +219,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="descricao">Classificação Interna</label>
+                        <label for="idClassificacaoInterna">Classificação Interna</label>
                         
                          <jsp:useBean 
                             id="servicosClassificacaoInterna" 
