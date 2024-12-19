@@ -1,7 +1,6 @@
 package locacaomidias.entidades;
 
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import java.sql.Date;
 
 public class Locacao {
@@ -10,7 +9,7 @@ public class Locacao {
     private Long idLocacao;
     
     @NotNull
-    private int dataInicio;
+    private Date dataInicio;
     
     @NotNull
     private Date dataFim;
@@ -29,11 +28,11 @@ public class Locacao {
         this.idLocacao = idLocacao;
     }
 
-    public int getDataInicio() {
+    public Date getDataInicio() {
         return dataInicio;
     }
 
-    public void setDataInicio(int dataInicio) {
+    public void setDataInicio(Date dataInicio) {
         this.dataInicio = dataInicio;
     }
 

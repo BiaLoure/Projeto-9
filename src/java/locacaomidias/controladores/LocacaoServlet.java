@@ -42,7 +42,7 @@ public class LocacaoServlet extends HttpServlet {
 
                 if(acao.equals("inserir")){
                     
-                        int dataInicio = Integer.parseInt(request.getParameter("dataInicio"));
+                        Date dataInicio = Date.valueOf(request.getParameter("dataInicio"));
                         Date dataFim = Date.valueOf(request.getParameter("dataFim"));
                         boolean cancelada = Boolean.parseBoolean(request.getParameter("cancelada"));
                         Long clienteId = Long.valueOf( request.getParameter( "clienteSelecionado" ) );
@@ -69,7 +69,7 @@ public class LocacaoServlet extends HttpServlet {
                 } else if( acao.equals("alterar")){
                     
                         Long id = Utils.getLong( request, "idLocacao" );
-                        int dataInicio = Integer.parseInt(request.getParameter("dataInicio"));
+                        Date dataInicio = Date.valueOf(request.getParameter("dataInicio"));
                         Date dataFim = Date.valueOf(request.getParameter("dataFim"));
                         boolean cancelada = Boolean.parseBoolean(request.getParameter("cancelada"));
                         Long clienteId = Long.valueOf( request.getParameter( "clienteSelecionado" ) );
