@@ -84,17 +84,17 @@
 
                     
                     <div class="form-group">
-                        <label for="descricao">Data Inicio: </label>
-                        <input type="text" class="form-control" name="dataInicio" placeholder="Digite a data de inicio" required>
+                        <label for="dataInicio">Data Inicio: </label>
+                        <input type="date" class="form-control" name="dataInicio" placeholder="Digite a data de inicio" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="descricao">Data Fim: </label>
+                        <label for="dataFim">Data Fim: </label>
                         <input type="date" class="form-control" name="dataFim" placeholder="Digite a data do fim" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="descricao">Cancelada: </label>
+                        <label for="cancelada">Cancelada: </label>
                         
                         <select class="form-select" aria-label="Default select example" name="cancelada" required>
                             <option selected value="false">Não</option>
@@ -112,7 +112,7 @@
                     />
                     
                     <div class="form-group">
-                        <label for="descricao">Cliente</label>
+                        <label for="clienteSelecionado">Cliente</label>
                         
                         <select class="form-select" aria-label="Default select example" name="clienteSelecionado" required>
                             <option selected>Selecione um cliente: </option>

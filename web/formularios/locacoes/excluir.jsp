@@ -86,19 +86,19 @@
 
                     
                     <div class="form-group">
-                        <label for="descricao">Data Inicio: </label>
-                        <input type="text" class="form-control" name="dataInicio" placeholder="Digite a data de inicio" readonly value="${requestScope.locacao.dataInicio}">
+                        <label for="dataInicio">Data Inicio: </label>
+                        <input type="date" class="form-control" name="dataInicio" placeholder="Digite a data de inicio" readonly value="${requestScope.locacao.dataInicio}" disabled>
                     </div>
                     
                     <div class="form-group">
-                        <label for="descricao">Data Fim: </label>
-                        <input type="date" class="form-control" name="dataFim" placeholder="Digite a data do fim" readonly value="${requestScope.locacao.dataFim}">
+                        <label for="dataFim">Data Fim: </label>
+                        <input type="date" class="form-control" name="dataFim" placeholder="Digite a data do fim" readonly value="${requestScope.locacao.dataFim}" disabled>
                     </div>
                     
                     <div class="form-group">
-                        <label for="descricao">Cancelada: </label>
+                        <label for="cancelada">Cancelada: </label>
                         
-                        <select class="form-select" aria-label="Default select example" name="cancelada" readonly value="${requestScope.locacao.cancelada}">
+                        <select class="form-select" aria-label="Default select example" name="cancelada" readonly value="${requestScope.locacao.cancelada}" disabled>
                             <option selected value="false">Não</option>
                             <option value="true">Sim</option>
                         </select>
@@ -112,9 +112,9 @@
                     />
                     
                     <div class="form-group">
-                        <label for="descricao">Cliente</label>
+                        <label for="clienteSelecionado">Cliente</label>
                         
-                        <select class="form-select" aria-label="Default select example" name="clienteSelecionado" readonly>
+                        <select class="form-select" disabled aria-label="Default select example" name="clienteSelecionado" readonly>
                             <option value="${requestScope.locacao.cliente.id}"> ${requestScope.locacao.cliente.nome} ${requestScope.locacao.cliente.sobrenome}</option>
                             
                             <c:forEach items="${clienteServicos.todos}" var="cliente" >

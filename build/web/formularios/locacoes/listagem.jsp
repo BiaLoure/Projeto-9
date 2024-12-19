@@ -120,7 +120,7 @@
                                         />
                                         
                                     </td>
-                                    <td>${locacao.cancelada}</td>
+                                    <td>${locacao.cancelada ? 'Sim' : 'Não'}</td>
                                     <td>${locacao.cliente.nome} ${locacao.cliente.sobrenome}</td>
                                     <td>
                                         <a href="${cp}/${prefixo}Alteracao&id=${locacao.idLocacao}">
