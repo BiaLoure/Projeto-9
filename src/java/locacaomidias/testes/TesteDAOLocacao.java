@@ -32,7 +32,7 @@ public class TesteDAOLocacao {
         locacao.setIdLocacao(Long.parseLong("1"));
         locacao.setCancelada(false);
         locacao.setDataFim(Date.valueOf("2003-12-12"));
-        locacao.setDataInicio(1920);
+        locacao.setDataInicio(Date.valueOf("2003-12-22"));
         
         
         
@@ -40,9 +40,9 @@ public class TesteDAOLocacao {
         try{
             
             dao = new LocacaoDAO();
-            dao.atualizar(locacao);
+            dao.salvar(locacao);
             
-            System.out.println(dao.obterPorId(Long.parseLong("1")).getDataInicio());
+            
             
             
         }catch(SQLException exception){

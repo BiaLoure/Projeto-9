@@ -1,7 +1,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="prefixo" value="processaLocacao?acao=preparar"/>
 <c:set var="cp" value="${pageContext.request.contextPath}"/>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -105,8 +107,19 @@
                             <c:forEach items="${locacaoServices.todos}" var="locacao" >
                                 <tr>
                                     <td>${locacao.idLocacao}</td>
-                                    <td>${locacao.dataInicio}</td>
-                                    <td>${locacao.dataFim}</td>
+                                    <td>
+                                        <fmt:formatDate
+                                            pattern="dd-MM-yyyy"
+                                            value="${locacao.dataInicio}"
+                                        />
+                                    </td>
+                                    <td>
+                                        <fmt:formatDate
+                                            pattern="dd-MM-yyyy"
+                                            value="${locacao.dataFim}"
+                                        />
+                                        
+                                    </td>
                                     <td>${locacao.cancelada}</td>
                                     <td>${locacao.cliente.nome} ${locacao.cliente.sobrenome}</td>
                                     <td>

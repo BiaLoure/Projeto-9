@@ -31,7 +31,7 @@ public class LocacaoDAO extends DAO<Locacao>{
                 """,
                 new String[]{ "insert_id" });
         
-        statement.setInt(1, obj.getDataInicio());
+        statement.setDate(1, obj.getDataInicio());
         statement.setDate(2, obj.getDataFim());
         statement.setBoolean(3, obj.isCancelada());
         statement.setLong(4, obj.getCliente().getId());
@@ -58,7 +58,7 @@ public class LocacaoDAO extends DAO<Locacao>{
                 """
         );
         
-        statement.setInt(1, obj.getDataInicio());
+        statement.setDate(1, obj.getDataInicio());
         statement.setDate(2, obj.getDataFim());
         statement.setBoolean(3, obj.isCancelada());
         
@@ -140,7 +140,7 @@ public class LocacaoDAO extends DAO<Locacao>{
             Estado estado = new Estado();
             
             locacao.setIdLocacao(set.getLong("locacao_id"));
-            locacao.setDataInicio(set.getInt("locacao_data_inicio"));
+            locacao.setDataInicio(set.getDate("locacao_data_inicio"));
             locacao.setDataFim(set.getDate("locacao_data_fim"));
             locacao.setCancelada(set.getBoolean("locacao_cancelada"));
             
@@ -234,7 +234,7 @@ public class LocacaoDAO extends DAO<Locacao>{
             Estado estado = new Estado();
             
             locacao.setIdLocacao(set.getLong("locacao_id"));
-            locacao.setDataInicio(set.getInt("locacao_data_inicio"));
+            locacao.setDataInicio(set.getDate("locacao_data_inicio"));
             locacao.setDataFim(set.getDate("locacao_data_fim"));
             locacao.setCancelada(set.getBoolean("locacao_cancelada"));
             
